@@ -12,7 +12,7 @@ uuid = "8af3cb94b05a4ee797c9222ae4678fcd"
 
 requires = []
 
-build_command = "python {root}/build.py"
+build_command = "python {root}/../build.py"
 
 private_build_requires = ["python-3+", "rez", "rezbuild_utils"]
 
