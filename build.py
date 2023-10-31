@@ -34,7 +34,7 @@ def build():
 
     rezbuild_utils.download_and_install_build(
         blender_url,
-        extract_reference_file_name="blender.exe",
+        reference_file_expression="**/blender.exe",
         use_cache=True,
     )
 
