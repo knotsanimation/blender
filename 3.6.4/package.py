@@ -14,9 +14,16 @@ requires = []
 
 build_command = "python {root}/../build.py"
 
-private_build_requires = ["python-3+", "rez", "rezbuild_utils"]
+private_build_requires = [
+    "python-3+",
+    "rez",
+    "rezbuild_utils-2+",
+]
 
-tools = ["blender", "blender-launcher"]
+tools = [
+    "blender",
+    "blender-launcher",
+]
 
 
 def commands():
