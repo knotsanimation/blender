@@ -32,11 +32,20 @@ def build():
     blender_url += f"{blender_version_split[0]}.{blender_version_split[1]}"
     blender_url += f"/{blender_filename}"
 
-    rezbuild_utils.download_and_install_build(
+    install_dir = rezbuild_utils.download_and_install_build(
         blender_url,
-        reference_file_expression="**/blender.exe",
+        install_dir_name="blender",
         use_cache=True,
     )
+    blender_dir = list(install_dir.glob("**/blender.exe"))
+    blender_dir = blender_dir[0].parent
+    target_dir = install_dir.parent
+    LOGGER.info(
+        f"moving extracted content <{blender_dir}> to expected position <{blender_dir}> ..."
+    )
+    rezbuild_utils.move_directory_content(blender_dir, target_dir)
+    blender_dir.rmdir()
+    install_dir.rmdir()
 
     LOGGER.info("finished")
 
