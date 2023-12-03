@@ -1,6 +1,6 @@
 name = "blender"
 
-version = "3.6.4.1"
+version = "3.6.4.2"
 
 authors = ["Blender Foundation"]
 
@@ -19,6 +19,8 @@ private_build_requires = [
     "rez",
     "rezbuild_utils-2+",
 ]
+
+cachable = True
 
 tools = [
     "blender",
